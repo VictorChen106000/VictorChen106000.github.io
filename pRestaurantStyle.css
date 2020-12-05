@@ -5,12 +5,11 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background-image: linear-gradient(225deg, #141e30, #243b55);
-  font-family: bodyFont;
 }
 
 @font-face {
   font-family: footer;
-  src: url(/MyFonts/Coldiac-Free/Fonts/Coldiac.otf);
+  src: url(MyFonts/Coldiac-Free/Fonts/Coldiac.otf);
 }
 
 .nav {
