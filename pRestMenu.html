@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu</title>
+    <style>
+      @font-face {
+        font-family: blacker;
+        src: url(../MyFonts/Blacker-Pro/Blacker-Pro-Display-Heavy-Italic-trial.ttf);
+      }
+      @font-face {
+        font-family: cool;
+        src: url(/MyFonts/Coldiac-Free/Fonts/Coldiac.otf);
+      }
+      body {
+        text-align: center;
+        font-family: "arno-pro";
+        background-color: rgb(255, 242, 226);
+        font-family: cool;
+        font-weight: bold;
+      }
+      .main {
+        margin: 13px auto;
+        width: 98%;
+        height: auto;
+        border: 3px solid black;
+      }
+      .main .header {
+        position: relative;
+        border: 4px double rgb(167, 127, 25);
+        text-align: center;
+        height: 100px;
+        margin-top: 50px;
+        margin-bottom: -30px;
+      }
+      .main .header h1 {
+        position: absolute;
+        top: 10px;
+        left: 155px;
+        font-family: blacker;
+        color: rgb(167, 127, 25);
+      }
+      /* .main .logo-border {
+        position: relative;
+        top: 30px;
+        margin: 0px auto;
+        border: 3px solid black;
+        width: 50%;
+        height: 165px;
+        border-radius: 50%;
+      }
+      .main .logo {
+        position: relative;
+        top: 30px;
+        margin: 0 auto; 
+        width: 100px;
+        height: 120px;
+        background: url(../cutlery.svg);
+        background-size: 100px;
+        background-repeat: no-repeat;
+      } */
+      hr {
+        display: inline-block;
+        border: 1px solid black;
+        width: 37%;
+      }
+      #main-title h1 {
+        display: inline-block;
+      }
+      .titles,
+      button {
+        text-transform: uppercase;
+      }
+      .titles {
+        margin-top: 150px;
+      }
+      #main-title {
+        margin-top: 50px;
+      }
+      button {
+        margin: 50px 10px 30px 10px;
+        border: 2px solid black;
+        font-size: 12px;
+        text-align: center;
+        padding: 8px 15px 15px 15px;
+        letter-spacing: 3px;
+        height: 35px;
+        background-color: transparent;
+      }
+      #dinner {
+        position: relative;
+        color: rgb(167, 127, 25);
+        border: none;
+      }
+      #dinner::before,
+      #dinner::after {
+        border: 2px solid rgb(167, 127, 25);
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        left: 0px;
+        bottom: 3px;
+        z-index: -1;
+        transition: all 0.25s ease;
+      }
+      #dinner:hover::before {
+        transform: translate(5px, 5px);
+        box-shadow: 5px 5px 7px 1px rgb(167, 127, 25);
+      }
+      #dinner:hover::after {
+        transform: translate(-5px, -5px);
+        box-shadow: -5px -5px 7px 1px rgb(167, 127, 25);
+      }
+
+      .same-btn {
+        border: none;
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        cursor: pointer;
+        user-select: none;
+      }
+      .same-btn::before,
+      .same-btn::after {
+        content: "";
+        position: absolute;
+        transition: inherit;
+        z-index: -1;
+      }
+
+      .same-btn:hover {
+        color: white;
+        transition-delay: 0.5s;
+      }
+      .same-btn:hover::before {
+        transition-delay: 0s;
+      }
+      .same-btn:hover::after {
+        background: black;
+        transition-delay: 0.35s;
+      }
+      .same-btn::before,
+      .same-btn::after {
+        top: 0;
+        width: 0;
+        height: 100%;
+      }
+      .same-btn::before {
+        right: 0;
+        top: -3px;
+        border: 2px solid black;
+        border-left: 0;
+        border-right: 0;
+      }
+      .same-btn::after {
+        top: -1px;
+        left: 0;
+      }
+      .same-btn:hover::before,
+      .same-btn:hover::after {
+        width: 100%;
+      }
+
+      #reservation {
+        position: relative;
+        border: none;
+      }
+      #reservation::after {
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        width: 10%;
+        height: 5px;
+        background: #000;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: all 0.25s ease;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      #reservation:hover::after {
+        width: 100%;
+      }
+
+      .items {
+        margin-top: 50px;
+      }
+      .items p {
+        line-height: 30px;
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 700px) {
+        .main {
+          border: none;
+        }
+      }
+      @media screen and (min-width: 800px) {
+        .main .header {
+        position: relative;
+        text-align: center;
+        width: 90%;
+        height: 100px;
+        margin-top: 50px;
+        margin-bottom: -30px;
+        left: 65px;
+      }
+      .main .header h1 {
+        margin-left: 270px;
+        font-family: blacker;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <a href="pRestaurant.html"><h1>GRAMERCY TAVERN</h1></a>
+      </div>
+
+      <div class="head">
+        <div class="titles" id="main-title">
+          <hr />
+          <h1>menus</h1>
+          <hr />
+        </div>
+
+        <div class="buttons">
+          <button id="dinner">dinner</button>
+          <button class="same-btn">lunch</button>
+          <button class="same-btn">gramercy tavern at home</button>
+        </div>
+
+        <p>Reservations are available exclusively on Resy.</p>
+        <button id="reservation">make a reservation</button>
+      </div>
+
+      <div class="menu">
+        <div class="titles">
+          <h1>seafood</h1>
+        </div>
+        <div class="items">
+          <h3>Chilled Island Creek Oysters</h3>
+          <p>
+            Duxbury, Massachusetts <br />
+            21/41
+          </p>
+        </div>
+        <div class="items">
+          <h3>Arctic Char Tartare</h3>
+          <p>
+            Lemon, Cucumber, Trout Roe <br />
+            15
+          </p>
+        </div>
+        <div class="items">
+          <h3>Steamed Lobster</h3>
+          <p>
+            "Jimmy Nardello" Peppers <br />
+            16
+          </p>
+        </div>
+
+        <div class="titles">
+          <h1>vegetables</h1>
+        </div>
+        <div class="items">
+          <h3>Chicken Liver Mousse</h3>
+          <p>
+            Garden Pickles, Grilled Bread <br />
+            16
+          </p>
+        </div>
+        <div class="items">
+          <h3>Tomato Carpaccio</h3>
+          <p>
+            Roasted Beets, Watermelon, Plum-Sesame Dressing <br />
+            18
+          </p>
+        </div>
+        <div class="items">
+          <h3>White Kale & Cabbage Salad</h3>
+          <p>
+            Hakurei Turnips, Pecorino, Fresno Dressing <br />
+            18
+          </p>
+        </div>
+        <div class="items">
+          <h3>Chilled Corn Soup</h3>
+          <p>
+            Pickled Cauliflower, Beets, Avocado <br />
+            17
+          </p>
+        </div>
+
+        <div class="titles">
+          <h1>from the grill</h1>
+        </div>
+        <div class="items">
+          <h3>Cioppino</h3>
+          <p>
+            Grilled Hake, Calamari, Shrimp, Lobster Broth, Zucchini &
+            Yellow-eyed <br />
+            Shell Beans <br />
+            38
+          </p>
+        </div>
+        <div class="items">
+          <h3>Grilled & Braised Pork</h3>
+          <p>
+            Polenta, Delicata Squash, Pumpkin Seed Salsa <br />
+            36
+          </p>
+        </div>
+        <div class="items">
+          <h3>Campanelle Bolognese</h3>
+          <p>
+            Kale, Basil, Pecorino <br />
+            29
+          </p>
+        </div>
+        <div class="items">
+          <h3>Tavern Bacon & Cheddar Burger</h3>
+          <p>
+            Smoked Onion Sauce, Duck Fat Potato Chips <br />
+            32
+          </p>
+        </div>
+        <div class="items">
+          <h3>Grilled Eggplant Parm</h3>
+          <p>
+            Heirloom Pepper-Tomato Sauce, Garlic Croutons <br />
+            28
+          </p>
+        </div>
+
+        <div class="titles">
+          <h1>last bites</h1>
+        </div>
+        <div class="items">
+          <h3>A Perfect Peach</h3>
+          <p>
+            Fresh fruit from the Union Square Greenmarket, Mint Syrup <br />
+            10
+          </p>
+        </div>
+        <div class="items">
+          <h3>Caffe Panna Gelato</h3>
+          <p>
+            Salted Coconut Stracciatella, Toasted Pecans, Amano Chocolate <br />
+            10
+          </p>
+        </div>
+        <div class="items">
+          <h3>Triple Chocolate Chunk Cookie</h3>
+          <p>9</p>
+        </div>
+        <div class="items">
+          <h3>Tri-Star Strawberry Popsicle</h3>
+          <p>
+            Mountain Sweet Berry Farm <br />
+            10
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
