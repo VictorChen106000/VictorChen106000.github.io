@@ -95,7 +95,7 @@ body {
   width: 100%;
   border: 1px solid black;
   height: 700px;
-  background: url(/images/restaurant_3.jpg);
+  background: url(images/restaurant_3.jpg);
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -108,14 +108,14 @@ body {
 }
 .f1 {
   float: right;
-  background: url(/images/restaurant_2.jpg);
+  background: url(images/restaurant_2.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 .f2 {
-  background: url(/images/restaurant_1.jpeg);
+  background: url(images/restaurant_1.jpeg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
