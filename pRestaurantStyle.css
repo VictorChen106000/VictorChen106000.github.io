@@ -263,6 +263,9 @@ hr {
   #reserve {
     padding-bottom: 5px;
   }
+  hr {
+    width: 40%;
+  }
 }
 @media screen and (max-width: 700px) {
   .logo {
